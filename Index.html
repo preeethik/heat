@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Kids Science Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="floating star1">⭐</div>
+<div class="floating star2">🌈</div>
+<div class="floating star3">✨</div>
+<div class="floating star4">🎈</div>
+
+<header>
+    <div class="sun">☀️</div>
+    <h1>🌟 Happy Kids Quiz 🌟</h1>
+    <h2>Science Adventure!</h2>
+    <p>Class 6 | Term 2 | Chapter 1: Heat 🔥</p>
+</header>
+
+<main class="container">
+
+    <section class="welcome card">
+        <h2>🎉 Welcome, Little Scientist!</h2>
+        <p>Learn, Think, and Shine!</p>
+
+        <label for="studentName">Your Name:</label>
+        <input type="text" id="studentName"
+               placeholder="Enter your name">
+
+        <button class="start-btn" onclick="startTest()">
+            🚀 Start Test
+        </button>
+    </section>
+
+    <form id="quizForm" class="hidden">
+
+        <div class="progress-card card">
+            <h2>📚 Your Science Challenge</h2>
+            <p>Read carefully and choose your answers!</p>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <!-- MCQ -->
+        <section class="card question-card">
+            <h2>🧠 I. Choose the Correct Answer</h2>
+
+            <div class="question">
+                <p>1. When an object is heated, the molecules
+                that make up the object:</p>
+
+                <label><input type="radio" name="q1" value="a">
+                (a) Begin to move faster</label>
+
+                <label><input type="radio" name="q1" value="b">
+                (b) Lose energy</label>
+
+                <label><input type="radio" name="q1" value="c">
+                (c) Become heavier</label>
+
+                <label><input type="radio" name="q1" value="d">
+                (d) Become lighter</label>
+            </div>
+
+            <div class="question">
+                <p>2. What is the unit of heat?</p>
+
+                <label><input type="radio" name="q2" value="a">
+                (a) Newton</label>
+
+                <label><input type="radio" name="q2" value="b">
+                (b) Joule</label>
+
+                <label><input type="radio" name="q2" value="c">
+                (c) Volt</label>
+
+                <label><input type="radio" name="q2" value="d">
+                (d) Celsius</label>
+            </div>
+
+            <div class="question">
+                <p>3. One litre of water at 30°C is mixed
+                with one litre of water at 50°C.
+                What is the approximate temperature of the mixture?</p>
+
+                <label><input type="radio" name="q3" value="a">
+                (a) 80°C</label>
+
+                <label><input type="radio" name="q3" value="b">
+                (b) More than 50°C but less than 80°C</label>
+
+                <label><input type="radio" name="q3" value="c">
+                (c) 20°C</label>
+
+                <label><input type="radio" name="q3" value="d">
+                (d) Around 40°C</label>
+            </div>
+
+            <div class="question">
+                <p>4. An iron ball at 50°C is placed in water
+                at 50°C. What happens to the heat?</p>
+
+                <label><input type="radio" name="q4" value="a">
+                (a) Heat flows from iron to water</label>
+
+                <label><input type="radio" name="q4" value="b">
+                (b) No heat flows between them</label>
+
+                <label><input type="radio" name="q4" value="c">
+                (c) Heat flows from water to iron</label>
+
+                <label><input type="radio" name="q4" value="d">
+                (d) The temperature of both increases</label>
+            </div>
+        </section>
+
+        <!-- Fill in the blanks -->
+        <section class="card question-card">
+            <h2>✏️ II. Fill in the Blanks</h2>
+            <p class="tip">Type the correct answer in each box!</p>
+
+            <div class="question">
+                <p>5. Heat flows from a ______ body to a
+                ______ body.</p>
+                <input class="blank" type="text" id="q5a"
+                       placeholder="First blank">
+                <input class="blank" type="text" id="q5b"
+                       placeholder="Second blank">
+            </div>
+
+            <div class="question">
+                <p>6. The hotness of an object is determined
+                by its ______.</p>
+                <input class="blank" type="text" id="q6"
+                       placeholder="Type your answer">
+            </div>
+
+            <div class="question">
+                <p>7. The SI unit of temperature is ______.</p>
+                <input class="blank" type="text" id="q7"
+                       placeholder="Type your answer">
+            </div>
+
+            <div class="question">
+                <p>8. Solids ______ on heating and ______
+                on cooling.</p>
+                <input class="blank" type="text" id="q8a"
+                       placeholder="First blank">
+                <input class="blank" type="text" id="q8b"
+                       placeholder="Second blank">
+            </div>
+
+            <div class="question">
+                <p>9. Two bodies are in thermal ______
+                when there is no transfer of heat between them.</p>
+                <input class="blank" type="text" id="q9"
+                       placeholder="Type your answer">
+            </div>
+        </section>
+
+        <!-- Match the following -->
+        <section class="card question-card">
+            <h2>🔗 III. Match the Following</h2>
+            <p class="tip">Choose the correct matching answer!</p>
+
+            <div class="match-row">
+                <span>10. Heat </span>
+                <select id="q10">
+                    <option value="">Choose an answer</option>
+                    <option value="a">0^0c</option>
+                    <option value="b">100^0c</option>
+                    <option value="c">kelvin</option>
+                    <option value="d">No heat flow</option>
+                    <option value="e">joule</option>
+                </select>
+            </div>
+
+            <div class="match-row">
+                <span>11. Temperature </span>
+                <select id="q11">
+                    <option value="">Choose an answer</option>
+                    <option value="a">0^0c</option>
+                    <option value="b">100^0c</option>
+                    <option value="c">kelvin</option>
+                    <option value="d">No heat flow</option>
+                    <option value="e">joule</option>
+                </select>
+            </div>
+
+            <div class="match-row">
+                <span>12. Thermal equilibrium</span>
+                <select id="q12">
+                    <option value="">Choose an answer</option>
+                     <option value="a">0^0c</option>
+                    <option value="b">100^0c</option>
+                    <option value="c">kelvin</option>
+                    <option value="d">No heat flow</option>
+                    <option value="e">joule</option>
+                </select>
+            </div>
+
+            <div class="match-row">
+                <span>13.Ice cube              </span>
+                <select id="q13">
+                    <option value="">Choose an answer</option>
+                     <option value="a">0^0c</option>
+                    <option value="b">100^0c</option>
+                    <option value="c">kelvin</option>
+                    <option value="d">No heat flow</option>
+                    <option value="e">joule</option>
+                </select>
+            </div>
+
+            <div class="match-row">
+                <span>14.Boiling water </span>
+                <select id="q14">
+                    <option value="">Choose an answer</option>
+                     <option value="a">0^0c</option>
+                    <option value="b">100^0c</option>
+                    <option value="c">kelvin</option>
+                    <option value="d">No heat flow</option>
+                    <option value="e">joule</option>
+                 </select>
+            </div>
+        </section>
+
+        <button type="button" class="submit-btn"
+                onclick="submitTest()">
+            🎯 Submit My Test
+        </button>
+
+    </form>
+
+    <!-- Results -->
+    <section id="result" class="card hidden">
+        <h2>🎉 Test Completed!</h2>
+        <div class="trophy">🏆</div>
+        <h3 id="greeting"></h3>
+        <p class="score-text">Your Score</p>
+        <div id="score"></div>
+        <p id="message"></p>
+
+        <button class="start-btn" onclick="showAnswers()">
+            📖 View Answers
+        </button>
+
+        <div id="answers" class="hidden"></div>
+
+        <button class="submit-btn" onclick="location.reload()">
+            🔄 Try Again
+        </button>
+    </section>
+
+</main>
+
+<footer>
+    <p>💖 Keep Learning, Keep Shining! 💖</p>
+</footer>
+
+<script>
+function startTest() {
+    const name = document.getElementById("studentName")
+                        .value.trim();
+
+    if (!name) {
+        alert("Please enter your name first! 😊");
+        return;
+    }
+
+    document.querySelector(".welcome").classList.add("hidden");
+    document.getElementById("quizForm").classList.remove("hidden");
+
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function cleanAnswer(id) {
+    return document.getElementById(id).value
+        .trim()
+        .toLowerCase()
+        .replace(/[.,!?]/g, "")
+        .replace(/\s+/g, " ");
+}
+
+function submitTest() {
+    let score = 0;
+    const total = 14;
+
+    const mcqAnswers = {
+        q1: "a",
+        q2: "b",
+        q3: "d",
+        q4: "b"
+    };
+
+    for (const [question, answer] of Object.entries(mcqAnswers)) {
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answer) {
+            score++;
+        }
+    }
+
+    const textAnswers = [
+        {id: "q5a", answers: ["hot"]},
+        {id: "q5b", answers: ["cold"]},
+        {id: "q6", answers: ["temperature"]},
+        {id: "q7", answers: ["kelvin", "kelvins"]},
+        {id: "q8a", answers: ["expand", "expands"]},
+        {id: "q8b", answers: ["contract", "contracts"]},
+        {id: "q9", answers: ["equilibrium", "thermal equilibrium"]}
+    ];
+
+    textAnswers.forEach(item => {
+        if (item.answers.includes(cleanAnswer(item.id))) {
+            score++;
+        }
+    });
+
+    const matchAnswers = {
+        q10: "e",
+        q11: "c",
+        q12: "d",
+        q13: "a",
+        q14: "b"
+    };
+
+    for (const [question, answer] of Object.entries(matchAnswers)) {
+        if (document.getElementById(question).value === answer) {
+            score++;
+        }
+    }
+
+    const name = document.getElementById("studentName").value.trim();
+
+    document.getElementById("quizForm").classList.add("hidden");
+    document.getElementById("result").classList.remove("hidden");
+
+    document.getElementById("greeting").textContent =
+        "Amazing work, " + name + "! 🌟";
+
+    document.getElementById("score").textContent =
+        score + " / " + total;
+
+    const percent = Math.round(score / total * 100);
+
+    document.getElementById("message").textContent =
+        percent === 100 ? "Perfect score! You are a Science Star! 🌟🎉" :
+        percent >= 70 ? "Excellent work! Keep it up! 🎉" :
+        percent >= 40 ? "Good try! Keep practising! 💪" :
+        "Keep learning! You can do it! 💖";
+
+    document.getElementById("answers").classList.add("hidden");
+
+    if (percent >= 70) {
+        launchConfetti();
+    }
+
+    window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+function showAnswers() {
+    const box = document.getElementById("answers");
+
+    box.innerHTML = `
+        <h3>📚 Correct Answers</h3>
+        <ol>
+            <li>Begin to move faster</li>
+            <li>Joule</li>
+            <li>Around 40°C</li>
+            <li>No heat flows between them</li>
+            <li>Hot, cold</li>
+            <li>Temperature</li>
+            <li>Kelvin</li>
+            <li>Expand, contract</li>
+            <li>Equilibrium</li>
+            <li>joule</li>
+            <li>kelvin</li>
+            <li>no heat flow</li>
+            <li>0^0c</li>
+            <li>100^0c</li>
+        </ol>
+    `;
+
+    box.classList.remove("hidden");
+}
+
+function launchConfetti() {
+    const emojis = ["⭐", "🎉", "✨", "🎈", "🌟"];
+
+    for (let i = 0; i < 35; i++) {
+        const piece = document.createElement("span");
+
+        piece.className = "confetti";
+        piece.textContent =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.animationDelay = Math.random() * 1.5 + "s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => piece.remove(), 3500);
+    }
+}
+
+// Update progress as students answer.
+document.getElementById("quizForm").addEventListener("input", () => {
+    const fields = [
+        ...document.querySelectorAll(
+            '#quizForm input[type="radio"]:checked'
+        ),
+        ...document.querySelectorAll(
+            '#quizForm input[type="text"], #quizForm select'
+        )
+    ];
+
+    const filled = fields.filter(field => field.value.trim() !== "");
+    const percent = Math.min(100, filled.length / 15 * 100);
+
+    document.getElementById("progressBar").style.width =
+        percent + "%";
+});
+</script>
+
+</body>
+</html>
